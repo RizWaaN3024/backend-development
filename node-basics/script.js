@@ -36,3 +36,33 @@ fs.rename("test.txt", "helloWorld.txt", function(err) {
         console.log("Done")
     }
 })
+
+// Copy file
+
+fs.copyFile("helloWorld.txt", "./copy/copyWorld.txt", function(err) {
+    if(err) {
+        console.error(err)
+    } else {
+        console.log("Copied")
+    }
+})
+
+// unlinkfile--delete a file
+
+fs.unlink("./copy/copyWorld.txt", function(err) {
+    if(err) {
+        console.error(err.message)
+    } else {
+        console.log("Deleted")
+    }
+})
+
+// rmdir-or rm- to remove an empty directory
+
+fs.rmdir("./copy", function(err) {
+    if(err) {
+        console.error(err)
+    } else {
+        console.log("Removed")
+    }
+})
