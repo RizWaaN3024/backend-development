@@ -20,7 +20,7 @@ fs.writeFile("test.txt", "My first node js code", function(err) {
 
 // Append something to the old file
 fs.appendFile("test.txt", "My second line of node js code", function(err) {
-    if(err) {
+    if (err) {
         console.error(err)
     } else {
         console.log("Done")
@@ -30,7 +30,7 @@ fs.appendFile("test.txt", "My second line of node js code", function(err) {
 // Rename the file
 
 fs.rename("test.txt", "helloWorld.txt", function(err) {
-    if(err) {
+    if (err) {
         console.error(err)
     } else {
         console.log("Done")
@@ -40,7 +40,7 @@ fs.rename("test.txt", "helloWorld.txt", function(err) {
 // Copy file
 
 fs.copyFile("helloWorld.txt", "./copy/copyWorld.txt", function(err) {
-    if(err) {
+    if (err) {
         console.error(err)
     } else {
         console.log("Copied")
@@ -50,7 +50,7 @@ fs.copyFile("helloWorld.txt", "./copy/copyWorld.txt", function(err) {
 // unlinkfile--delete a file
 
 fs.unlink("./copy/copyWorld.txt", function(err) {
-    if(err) {
+    if (err) {
         console.error(err.message)
     } else {
         console.log("Deleted")
@@ -60,9 +60,19 @@ fs.unlink("./copy/copyWorld.txt", function(err) {
 // rmdir-or rm- to remove an empty directory
 
 fs.rmdir("./copy", function(err) {
-    if(err) {
+    if (err) {
         console.error(err)
     } else {
         console.log("Removed")
+    }
+})
+
+// To read a file
+
+fs.readFile("helloWorld.txt", "utf-8", function(err, data) {
+    if (err) {
+        console.error(err)
+    } else {
+        console.log('File Content:', data)
     }
 })
