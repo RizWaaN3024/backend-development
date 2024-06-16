@@ -26,6 +26,17 @@ app.get("/file/:filename", function(req, res) {
         res.render("show", {filename: req.params.filename, filedata: filedata})
     })
 })
+// post route for edit functionality
+app.post("/edit", (req, res) => {
+    fs.rename(`./files/${req.body.previous}`, `./files/${req.body.new}`, (err) => {
+        res.redirect("/")
+    })
+})
+
+// edit route
+app.get("/edit/:filename", (req, res) => {
+    res.render("edit", {filename: req.params.filename})
+})
 
 
 // Dynamic Routing
