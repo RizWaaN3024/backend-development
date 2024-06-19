@@ -12,4 +12,8 @@ app.get("/", (req, res) => {
     res.render("index")
 })
 
+// read route
+app.get('/read', (req, res) => {
+    res.render("read")
+})
 app.listen(3000)

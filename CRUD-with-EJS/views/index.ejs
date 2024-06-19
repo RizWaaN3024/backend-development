@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../public/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="h-full w-full bg-zinc-900">
-
+    <div class="h-full w-full bg-zinc-900 p-10 text-white">
+        <div class="nav mb-10"> 
+            <a class="text-blue-500" href="/read">Read Users</a>
+        </div>
+        <h1 class="text-3xl tracking-tighter mb-3">Create User</h1>
+        <form action="">
+            <input type="text" class="px-5 border-2 border-zinc-800 rounded-lg py-2 outline-none bg-transparent" placeholder="name">
+            <input type="text" class="px-5 border-2 border-zinc-800 rounded-lg py-2 outline-none bg-transparent" placeholder="email">
+            <input type="text" class="px-5 border-2 border-zinc-800 rounded-lg py-2 outline-none bg-transparent" placeholder="image-url">
+            <input type="submit" value="Create User" class="px-5 py-2 bg-blue-500 rounded-lg ml-3">
+        </form>
     </div>
 </body>
 </html>
