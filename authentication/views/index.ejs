@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="w-full h-screen bg-zinc-900 text-white">
+        <h3 class="text-3xl mb-3">Create User</h3>
+        <form action="/create" method="POST">
+            <input class="px-3 py-2 rounded-md bg-transparent border-2 border-zinc-800 outline-none" type="text" name="username" placeholder="Username" id="">
+            <input class="px-3 py-2 rounded-md bg-transparent border-2 border-zinc-800 outline-none" type="email" name="email" placeholder="Email" id="">
+            <input class="px-3 py-2 rounded-md bg-transparent border-2 border-zinc-800 outline-none" type="password" name="password" placeholder="Password" id="">
+            <input class="px-3 py-2 rounded-md bg-transparent border-2 border-zinc-800 outline-none" type="number" name="age" placeholder="Age" id="">
+            <input class="px-5 py-2 rounded-md bg-blue-500" type="submit" value="Create User">
+        </form>
+    </div>
+</body>
+</html>
