@@ -44,4 +44,25 @@ app.get("/logout", (req, res) => {
     res.redirect("/")
 })
 
+// Login
+app.get("/login", (req, res) => {
+    res.render("login")
+})
+
+app.post("/login", async (req, res) => {
+    let user = await userModel.findOne({email: req.body.email})
+    if (!user) return res.send("Something Went Wrong")
+
+    bcrypt.compare(req.body.password, user.password, (err, result) => {
+        if (result) {
+            let token = jwt.sign({email: user.email}, "secret")
+            res.cookie("token", token)
+            res.send("Login Successful")
+        } else {
+            res.send("Something Wetn Wrong")
+        }
+    })
+
+})
+
 app.listen(3000)
