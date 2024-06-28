@@ -1,6 +1,7 @@
 const express = require("express")
 const app = express()
 const userModel = require("./models/user")
+const jwt = require("jsonwebtoken")
 
 
 const path = require("path")
@@ -28,11 +29,19 @@ app.post("/create", (req, res) => {
                 password: hash,
                 age
             })
+            let token = jwt.sign({email}, "secret")
+            res.cookie("token", token)
             res.send(createdUser)
         })
     })
     
 
+})
+
+// logout
+app.get("/logout", (req, res) => {
+    res.cookie("token", "")
+    res.redirect("/")
 })
 
 app.listen(3000)
